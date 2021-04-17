@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k8KCIQUXt0MuzngJ+LptalKiVlrB1UiEY6jaWI18mcfhiyOSY8ikc9PEFop0BQZMfImoyabOrFQaq9rSHxf5rg==",
+  "dgSpecHash": "RTDeLJhZ6rJ22jvR2PVM5P8qa1hX+7nGtzSVZv2/0YDPMXzkxZeTWjJnMwG/T3XIJf3+/QFO/84mgpZMqhGSsw==",
   "success": true,
-  "projectFilePath": "D:\\Server\\Server\\Server\\Server.csproj",
+  "projectFilePath": "D:\\Server\\AdventureServer\\Server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

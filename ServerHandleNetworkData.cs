@@ -70,7 +70,8 @@ namespace CSharpServer
 
             //Add your code want to execute hear:
             Console.WriteLine("Message from {1}: {0}", msg, index);
-            ServerTCP.SendMessage(index, "Poshol naxui");
+            //ServerTCP.SendMessage(index,"Poshol naxui " + index);
+            ServerTCP.SendMessageAll("Poshol naxui " + index);
         }
 
         public static void HandleNetworkInformation(int index, byte[] data)

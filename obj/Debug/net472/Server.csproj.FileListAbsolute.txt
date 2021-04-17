@@ -7,3 +7,12 @@ D:\Server\Server\Server\obj\Debug\net472\Server.AssemblyInfo.cs
 D:\Server\Server\Server\obj\Debug\net472\Server.csproj.CoreCompileInputs.cache
 D:\Server\Server\Server\obj\Debug\net472\Server.exe
 D:\Server\Server\Server\obj\Debug\net472\Server.pdb
+D:\Server\AdventureServer\bin\Debug\net472\Server.exe.config
+D:\Server\AdventureServer\bin\Debug\net472\Server.exe
+D:\Server\AdventureServer\bin\Debug\net472\Server.pdb
+D:\Server\AdventureServer\obj\Debug\net472\Server.csprojAssemblyReference.cache
+D:\Server\AdventureServer\obj\Debug\net472\Server.AssemblyInfoInputs.cache
+D:\Server\AdventureServer\obj\Debug\net472\Server.AssemblyInfo.cs
+D:\Server\AdventureServer\obj\Debug\net472\Server.csproj.CoreCompileInputs.cache
+D:\Server\AdventureServer\obj\Debug\net472\Server.exe
+D:\Server\AdventureServer\obj\Debug\net472\Server.pdb

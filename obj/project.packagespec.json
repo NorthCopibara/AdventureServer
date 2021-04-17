@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "D:\\Server\\Server\\Server\\Server.csproj",
+    "projectUniqueName": "D:\\Server\\AdventureServer\\Server.csproj",
     "projectName": "Server",
-    "projectPath": "D:\\Server\\Server\\Server\\Server.csproj",
-    "outputPath": "D:\\Server\\Server\\Server\\obj\\",
+    "projectPath": "D:\\Server\\AdventureServer\\Server.csproj",
+    "outputPath": "D:\\Server\\AdventureServer\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "net472"
@@ -16,8 +16,8 @@
     "frameworks": {
       "net472": {
         "projectReferences": {
-          "D:\\Server\\Server\\Bindings\\Bindings.csproj": {
-            "projectPath": "D:\\Server\\Server\\Bindings\\Bindings.csproj"
+          "D:\\Server\\Bindings\\Bindings.csproj": {
+            "projectPath": "D:\\Server\\Bindings\\Bindings.csproj"
           }
         }
       }

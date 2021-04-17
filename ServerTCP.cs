@@ -8,7 +8,7 @@ namespace CSharpServer
 {
     public class ServerTCP
     {
-        private const int PORT = 5555;
+        private const int PORT = 8081;
         
         private static Socket _serverSocket =
             new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -41,6 +41,7 @@ namespace CSharpServer
                     Clients[i].Index = i;
                     Clients[i].Ip = socket.RemoteEndPoint.ToString();
                     Clients[i].StartClient();
+                    Clients[i].IsConnected = true;
                     
                     Console.WriteLine("Connection from '{0}' received", Clients[i].Ip);
                     SendConnectionOK(i);
@@ -60,7 +61,34 @@ namespace CSharpServer
             Clients[index].ClientSocket.Send(sizeInfo);
             Clients[index].ClientSocket.Send(data);
         }
+        
+        public static void SendDataAll(byte[] data)
+        {
+            byte[] sizeInfo = new byte[4];
+            sizeInfo[0] = (byte) data.Length;
+            sizeInfo[1] = (byte) (data.Length >> 8);
+            sizeInfo[2] = (byte) (data.Length >> 16);
+            sizeInfo[3] = (byte) (data.Length >> 24);
 
+            foreach (var client in Clients)
+            {
+                if (client.IsConnected)
+                {
+                    client.ClientSocket.Send(sizeInfo);
+                    client.ClientSocket.Send(data);
+                }
+            }
+        }
+
+        public static void SendMessageAll(string message)
+        {
+            PacketBuffer buffer = new PacketBuffer();
+            buffer.WriteInteger((int)ServerPackets.SMessage);
+            buffer.WriteString(message);
+            SendDataAll(buffer.ToArray);
+            buffer.Dispose();
+        }
+        
         public static void SendMessage(int index, string message)
         {
             PacketBuffer buffer = new PacketBuffer();
@@ -85,6 +113,7 @@ namespace CSharpServer
         public int Index;
         public string Ip;
         public Socket ClientSocket;
+        public bool IsConnected;
         public bool closing = false;
         private byte[] _buffer = new byte[1024];
 
@@ -121,6 +150,7 @@ namespace CSharpServer
 
         private void CloseClient(int index)
         {
+            IsConnected = false;
             closing = true;
             Console.WriteLine("Connection from {0} has ben terminated.", Ip);
             //PlayerLeftGame
